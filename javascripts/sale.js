@@ -36,6 +36,7 @@ function addToCart() {
     purchases.push(addingItem);
   }
 
+  window.alert(`${itemLines(purchases)}\n小計: ${itemTotal(purchases)}円`);
   form.reset();
 }
 
