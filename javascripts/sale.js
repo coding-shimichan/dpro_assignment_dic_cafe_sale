@@ -77,10 +77,6 @@ function showItemsInCart() {
 }
 
 function calc() {
-  if (parseInt(form.product.value) > 0) {
-    addToCart();
-  }
-
   const _itemLines = itemLines();
   const _itemTotal = itemTotal();
   const _shippingFee = shippingFee(_itemTotal);
