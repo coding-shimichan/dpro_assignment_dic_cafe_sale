@@ -69,11 +69,7 @@ function shippingFee(itemTotal) {
 
 function showItemsInCart() {
   addToCart();
-  window.alert(_itemsInCartMessage());
-
-  function _itemsInCartMessage() {
-    return itemLines(purchases) + "\n" + `小計: ${itemTotal(purchases)}円`;
-  }
+  window.alert(`${itemLines(purchases)}\n小計: ${itemTotal(purchases)}円`);
 }
 
 function calc() {
