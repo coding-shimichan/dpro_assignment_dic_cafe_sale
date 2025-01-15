@@ -47,7 +47,7 @@ function itemTotal() {
   }, 0);
 }
 
-function itemLines() {
+function itemLines(purchases) {
   return purchases.reduce((result, currentProduct) => {
     const messageLine = `${currentProduct.name} ${currentProduct.price}円: ${currentProduct.quantity}点\n`;
     result += messageLine;
@@ -72,12 +72,12 @@ function showItemsInCart() {
   window.alert(_itemsInCartMessage());
 
   function _itemsInCartMessage() {
-    return itemLines() + "\n" + `小計: ${itemTotal()}円`;
+    return itemLines(purchases) + "\n" + `小計: ${itemTotal()}円`;
   }
 }
 
 function calc() {
-  const _itemLines = itemLines();
+  const _itemLines = itemLines(purchases);
   const _itemTotal = itemTotal();
   const _shippingFee = shippingFee(_itemTotal);
 
