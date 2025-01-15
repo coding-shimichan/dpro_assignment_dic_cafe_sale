@@ -48,11 +48,11 @@ function itemTotal(items) {
 }
 
 function itemLines(items) {
-  return items.reduce((result, currentItem) => {
-    const messageLine = `${currentItem.name} ${currentItem.price}円: ${currentItem.quantity}点\n`;
-    result += messageLine;
-    return result;
-  }, "");
+  return items
+    .map((item) => {
+      return `${item.name} ${item.price}円: ${item.quantity}点\n`;
+    })
+    .join("\n");
 }
 
 function shippingFee(itemTotal) {
