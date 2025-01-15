@@ -39,7 +39,7 @@ function addToCart() {
   form.reset();
 }
 
-function itemTotal() {
+function itemTotal(purchases) {
   return purchases.reduce((result, currentProduct) => {
     const subtotal = currentProduct.price * currentProduct.quantity;
     result += subtotal;
@@ -72,13 +72,13 @@ function showItemsInCart() {
   window.alert(_itemsInCartMessage());
 
   function _itemsInCartMessage() {
-    return itemLines(purchases) + "\n" + `小計: ${itemTotal()}円`;
+    return itemLines(purchases) + "\n" + `小計: ${itemTotal(purchases)}円`;
   }
 }
 
 function calc() {
   const _itemLines = itemLines(purchases);
-  const _itemTotal = itemTotal();
+  const _itemTotal = itemTotal(purchases);
   const _shippingFee = shippingFee(_itemTotal);
 
   window.alert(
