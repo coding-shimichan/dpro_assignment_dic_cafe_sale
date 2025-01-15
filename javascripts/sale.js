@@ -39,17 +39,17 @@ function addToCart() {
   form.reset();
 }
 
-function itemTotal(purchases) {
-  return purchases.reduce((result, currentProduct) => {
-    const subtotal = currentProduct.price * currentProduct.quantity;
+function itemTotal(items) {
+  return items.reduce((result, currentItem) => {
+    const subtotal = currentItem.price * currentItem.quantity;
     result += subtotal;
     return result;
   }, 0);
 }
 
-function itemLines(purchases) {
-  return purchases.reduce((result, currentProduct) => {
-    const messageLine = `${currentProduct.name} ${currentProduct.price}円: ${currentProduct.quantity}点\n`;
+function itemLines(items) {
+  return items.reduce((result, currentItem) => {
+    const messageLine = `${currentItem.name} ${currentItem.price}円: ${currentItem.quantity}点\n`;
     result += messageLine;
     return result;
   }, "");
